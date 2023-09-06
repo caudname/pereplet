@@ -25,7 +25,7 @@
 					</div>
 					<div class="header-reg">
 						<?php
-							if ($_SESSION["status"] == "yes") {
+							if (isset($_SESSION["status"]) == "yes") {
 								echo '<a class="header-reg-name">'.$_SESSION["name"].'</a>
 								<div class="header-reg-link__block">
 									<a class="header-reg-link" id="logout">Выйти</a>
@@ -66,7 +66,7 @@
 						<div class="header-search-block">
 
 							<form method="get" action="search.php">
-								<input type="text" placeholder="Поиск" name="q" class="header-search-text" required value="<?php echo $searchText; ?>">
+								<input type="text" placeholder="Поиск" name="q" class="header-search-text" required value="<?php if (isset($searchText)) echo $searchText; ?>">
 								<button class="header-search-link">
 									<i class="fa fa-search" aria-hidden="true"></i>
 								</button>
